@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 121%;
+  background-color: var(--main-light-color);
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+  font-family: "Inter";
+}
+
+._container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 28px 0 28px;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767.9px) {
+  ._container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 12px 0 12px;
+  }
+}
+/*-----------------------------------------------------------------------*//*# sourceMappingURL=reset-style.css.map */

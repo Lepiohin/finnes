@@ -1,0 +1,220 @@
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+//Мінікси
+@mixin adaptiv-valeu($property, $startSize, $minSize, $type) {
+    @if $type==1 {
+    //тільки коли менше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width : #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } 
+    @else if $type==2 {
+    //тільки коли більше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    }
+    @else {
+        //завжди
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+}
+
+//Бургер меню
+.menu-btn{
+    display: none;
+}
+@media (max-width:968px) {
+    .menu-btn {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index:50;
+        overflow: hidden;
+
+    }
+    .menu-btn span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222222;
+        transition: all 0.5s;
+    }
+    .menu-btn span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+    .menu-btn span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+    .menu {	
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.966);
+        transform: translateX(-1000%);
+        transition: transform 0.5s; 
+        z-index: 50;
+    }
+    .menu.active {
+        transform: translateX(0);
+    }
+    .menu li {
+        list-style-type: none;
+    }
+    .menu-btn.active span:nth-of-type(1) {  display: none;
+    }
+    .menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+    }
+    .menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+    }
+    .menu__list{
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 10%;
+    }
+    .nav-item:not(:last-child){
+        margin: 0 0 20px 0;
+    }
+    .nav-link{
+        font-size: 24px;
+    }
+    body.active{
+        overflow: hidden;
+    }
+}
+
+/* Основні стилі для випадающого вікна */
+.menu a.parent{
+	margin: 0px 30px 0px 0px;
+}
+
+.menu li{
+	position: relative;
+	list-style: none;
+}
+.menu__list {
+	display: flex;
+}
+.menu__list>li{
+	margin: 0px 30px 0px 0px;
+}
+
+.menu__link {
+	color: #fff;
+}
+
+.sub-menu__list {
+	display: none;
+	min-width: 300px;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	padding: 20px 0px 0px 0px;
+}
+.sub-menu__list>li{
+	background-color: #fff;
+}
+
+.sub-menu__link {
+	color: #000;
+	display: inline-block;
+	padding: 5px 10px;
+}
+.sub-sub-menu__list {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	min-width: 300px;
+	padding: 0px 0px 0px 5px;
+}
+.sub-sub-menu__list>li{
+	background-color: #000;
+}
+.sub-sub-menu__link {
+	color: #fff;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+.arrow img{
+	display: block;
+	position: absolute;
+    top: 4px;
+    right: -14px;
+}
+.arrow.active img{
+	transform: rotate(-180deg);
+}
+.sub-menu__arrow.arrow {
+	right: 10px;
+	border-left: 10px solid #000;
+	border-right: none;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.menu__arrow{}
+
+body.mouse .menu__list>li:hover .sub-menu__list {
+	display: block;
+}
+body.mouse .sub-menu__list>li:hover .sub-sub-menu__list {
+	display: block;
+}
+
+body.touch .sub-menu__list.open{
+	display: block;
+}
+body.touch .sub-sub-menu__list.open{
+	display: block;
+}
+body.touch .arrow {
+	display: block;
+}
+
+@media (max-width:767px){
+	.wrapper{
+		padding: 15px;
+	}
+	.menu__list {
+		display: block;
+	}
+	.menu__list>li{
+		margin: 0px 0px 10px 0px;
+	}
+	.sub-menu__list{
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.sub-sub-menu__list{
+		padding: 0px 5px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.sub-menu__arrow.arrow {
+		right: 10px;
+		top: 15px;
+		border-bottom: none;
+		border-left: 10px solid transparent;
+		border-top: 10px solid #000;
+		border-right: 10px solid transparent;
+	}
+}
