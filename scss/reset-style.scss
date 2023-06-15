@@ -31,27 +31,19 @@ h6 {
 html,
 body {
     height: 100%;
-    line-height: 121%;
-    background-color: var(--main-light-color);
-    font-size: 14px;
-    color: #000;
+    line-height: 120%;
+    font-size: 24px;
+    color: #626262;
     font-weight: 400;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
+}
+#wrap{
+    overflow: hidden;
+    min-height: 100vw;
 }
 ._container{
-    max-width: 1350px;
+    max-width: 1684px;
     margin: 0 auto;
-    padding: 0 28px 0 28px;
-}
-.wrapper{
-    max-width: 1440px;
-    margin: 0 auto;
-}
-@media( max-width:767.9px) {
-    ._container{
-        max-width: 1350px;
-        margin: 0 auto;
-        padding: 0 12px 0 12px;
-    }
+    padding: 0 15px 0 15px;
 }
 /*-----------------------------------------------------------------------*/
