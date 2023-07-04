@@ -59,6 +59,11 @@
   color: #1B1B20;
 }
 
+.nav-item:hover {
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
 .btn {
   display: block;
   align-items: center;
@@ -72,6 +77,12 @@
   background: linear-gradient(180deg, #8B1CFB 0%, #B02CDF 100%);
   box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transition: 0.3s ease;
+  background: linear-gradient(180deg, #972eff 0%, #ba46e4 100%);
 }
 
 @media (max-width: 1320px) {
