@@ -1,5 +1,5 @@
-@import url('./reset-style.scss');
-@import url('./shablon.scss');
-@import url('./header.scss');
-@import url('./main.scss');
-@import url('./footer.scss');
+@import 'header';
+@import 'reset-style';
+@import 'shablon';
+@import 'main';
+@import 'footer';

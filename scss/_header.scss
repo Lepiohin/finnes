@@ -14,10 +14,10 @@
     .header{
         min-height: 100px;
     }
-}
-@media (max-width:424.98px) {
-    .header{
-        min-height: 80px;
+    @media (max-width:424.98px) {
+        .header{
+            min-height: 80px;
+        }
     }
 }
 .logo {

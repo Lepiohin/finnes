@@ -61,8 +61,8 @@ $maxWidthContainer: 1170;
         width: 100%;
         height: 100%;
         padding: 15px;
-        background: rgba(255, 255, 255, 0.562);
-        transform: translateX(-1000%);
+        background: rgba(255, 255, 255, 0.904);
+        transform: translateX(-100%);
         transition: transform 0.5s; 
         z-index: 50;
         display: flex;
@@ -92,6 +92,7 @@ $maxWidthContainer: 1170;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        overflow: auto;
         top: 5%;
     }
     .nav-item:not(:last-child){
